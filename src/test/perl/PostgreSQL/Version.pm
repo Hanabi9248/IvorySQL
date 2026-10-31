@@ -84,7 +84,7 @@ sub new
 	($arg, $devel) = ($1, $2)
 	  if (
 		$arg =~ m!^                             # beginning of line
-          (?:\(?PostgreSQL\)?\s)?         # ignore PostgreSQL marker
+          (?:psql\s\(PostgreSQL\)\s|\(?PostgreSQL\)?\s)?         # ignore PostgreSQL marker
           (\d+(?:\.\d+)*)                 # version number, dotted notation
           (devel|(?:alpha|beta|rc)\d+)?   # dev marker - see version_stamp.pl
 		 !x);
